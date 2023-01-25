@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+/* @media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} */
+header nav ul.control-panel, header nav ul.account-control, header nav, header .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  background-color: #d267e7;
+}
+header .logo i {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background-color: blue;
+  border-radius: 50%;
+}
+header nav ul.account-control {
+  padding: 0px 50px;
+}
+header nav ul.account-control .account-logo {
+  width: 50px;
+  height: 50px;
+}
+header nav ul.account-control .account-logo i {
+  width: inherit;
+  height: inherit;
+  float: left;
+  background-color: #ff76b6;
+  border-radius: 50%;
+}
+.main-block nav.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: calc( 100vh - 100px );
+  width: 256px;
+  background-color: cadetblue;
+}
+
+.main-block nav.sidebar h1 {
+  width: 100%;
+  color: blueviolet;
+  background-color: #6ebb79;
+}
+
+.content {
+  flex-grow: 1;
+  background-color: #ffdcae;
+}
+
+.main-block {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 1200px;
+  margin: auto;
+  background-color: #fff5e8;
+}
+
+.line-block {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fixed-block {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: inherit;
+}
+
+.content-block {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=main.css.map */
