@@ -118,16 +118,24 @@ header nav ul.account-control .account-logo i {
   width: 256px;
   background-color: cadetblue;
 }
-
-.main-block nav.sidebar h1 {
+.main-block nav.sidebar h6 {
   width: 100%;
   color: blueviolet;
   background-color: #6ebb79;
 }
+.main-block nav.sidebar ul:nth-child(4) {
+  overflow-y: auto;
+}
 
-.content {
+section.content {
   flex-grow: 1;
   background-color: #ffdcae;
+}
+section.content h2 {
+  position: fixed;
+}
+section.content .inf {
+  height: 3000px;
 }
 
 .main-block {

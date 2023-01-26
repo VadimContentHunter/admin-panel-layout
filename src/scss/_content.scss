@@ -1,5 +1,13 @@
-.content{
+section.content{
     flex-grow: 1;
 
     background-color: rgb(255, 220, 174);
+
+    h2 {
+        position: fixed;
+    }
+
+    .inf {
+        height: 3000px;
+    }
 }

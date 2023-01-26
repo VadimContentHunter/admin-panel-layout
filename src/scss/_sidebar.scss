@@ -1,16 +1,21 @@
-$name_sidebar: '.main-block nav.sidebar';
 
-#{$name_sidebar}{
+.main-block nav.sidebar {
     display: flex;
     flex-direction: column;
 
     height: calc( 100vh - #{$header_height} );
     width: 256px;
     background-color: cadetblue;
-}
 
-#{$name_sidebar} h1{
-    width: 100%;
-    color: blueviolet;
-    background-color: rgb(110, 187, 121);
+
+    h6{
+        width: 100%;
+        color: blueviolet;
+        background-color: rgb(110, 187, 121);
+    }
+
+    ul:nth-child(4) {
+        overflow-y: auto;
+    }
+
 }
