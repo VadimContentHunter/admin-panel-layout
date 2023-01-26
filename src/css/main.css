@@ -88,6 +88,7 @@ select {
 }
 
 header {
+  flex-grow: 1;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -176,7 +177,7 @@ section.content .inf {
 .fixed-block {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: fixed;
   width: inherit;
 }
@@ -184,7 +185,7 @@ section.content .inf {
 .content-block {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 /*# sourceMappingURL=main.css.map */
