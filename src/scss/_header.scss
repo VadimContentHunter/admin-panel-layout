@@ -8,47 +8,44 @@
 header{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
 
-    height: #{$header_height};
+    height: var(--admin-panel-height);
     background-color: rgb(210, 103, 231);
 
-
-    .logo {
+    nav.account-control {
         @extend %flex-block-center;
+        padding: 0px 50px;
 
-        i {
+        .account-logo {
             width: 50px;
             height: 50px;
-            float: left;
-            background-color: blue;
-            border-radius: 50%;
-        }
-    }
 
-    nav {
-        @extend %flex-block-center;
-
-        ul.account-control {
-            @extend %flex-block-center;
-            padding: 0px 50px;
-
-            .account-logo {
-                width: 50px;
-                height: 50px;
-
-                i {
-                    width: inherit;
-                    height: inherit;
-                    float: left;
-                    background-color: rgb(255, 118, 182);
-                    border-radius: 50%;
-                }
+            i {
+                width: inherit;
+                height: inherit;
+                float: left;
+                background-color: rgb(255, 118, 182);
+                border-radius: 50%;
             }
         }
 
-        ul.control-panel {
-            @extend %flex-block-center;
+    }
+
+    nav.control-panel {
+        @extend %flex-block-center;
+
+        .logo {
+            width: 50px;
+            height: 50px;
+
+            i {
+                width: inherit;
+                height: inherit;
+                float: left;
+                background-color: rgb(214, 255, 118);
+                border-radius: 50%;
+            }
         }
     }
 

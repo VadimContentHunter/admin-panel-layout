@@ -1,4 +1,8 @@
 @charset "UTF-8";
+:root {
+  --admin-panel-height: 100px;
+}
+
 /* Указываем box sizing */
 *,
 *::before,
@@ -77,7 +81,7 @@ select {
     scroll-behavior: auto !important;
   }
 } */
-header nav ul.control-panel, header nav ul.account-control, header nav, header .logo {
+.main-block nav.sidebar .logo, header nav.control-panel, header nav.account-control {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -86,37 +90,52 @@ header nav ul.control-panel, header nav ul.account-control, header nav, header .
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  height: 100px;
+  justify-content: flex-end;
+  height: var(--admin-panel-height);
   background-color: #d267e7;
 }
-header .logo i {
-  width: 50px;
-  height: 50px;
-  float: left;
-  background-color: blue;
-  border-radius: 50%;
-}
-header nav ul.account-control {
+header nav.account-control {
   padding: 0px 50px;
 }
-header nav ul.account-control .account-logo {
+header nav.account-control .account-logo {
   width: 50px;
   height: 50px;
 }
-header nav ul.account-control .account-logo i {
+header nav.account-control .account-logo i {
   width: inherit;
   height: inherit;
   float: left;
   background-color: #ff76b6;
   border-radius: 50%;
 }
+header nav.control-panel .logo {
+  width: 50px;
+  height: 50px;
+}
+header nav.control-panel .logo i {
+  width: inherit;
+  height: inherit;
+  float: left;
+  background-color: #d6ff76;
+  border-radius: 50%;
+}
+
 .main-block nav.sidebar {
   display: flex;
   flex-direction: column;
-  height: calc( 100vh - 100px );
+  height: 100vh;
   width: 256px;
   background-color: cadetblue;
+}
+.main-block nav.sidebar .logo {
+  height: var(--admin-panel-height);
+}
+.main-block nav.sidebar .logo i {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background-color: blue;
+  border-radius: 50%;
 }
 .main-block nav.sidebar h6 {
   width: 100%;
@@ -140,7 +159,7 @@ section.content .inf {
 
 .main-block {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 100vh;
   width: 1200px;
   margin: auto;
@@ -150,7 +169,7 @@ section.content .inf {
 .line-block {
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 
