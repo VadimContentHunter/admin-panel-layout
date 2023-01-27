@@ -4,7 +4,8 @@ section.content{
     background-color: rgb(255, 220, 174);
 
     h2 {
-        position: fixed;
+        position: sticky;
+        top: var(--admin-panel-height);
     }
 
     .inf {

@@ -1,5 +1,6 @@
 :root {
     --admin-panel-height: 100px;
+    --sidebar-panel-width: 256px;
   }
 // $admin_panel_height: 100px;
 
@@ -18,7 +19,7 @@
     background-color: rgb(255, 245, 232);
 }
 
-.line-block {
+main {
     flex-grow: 1;
 
     display: flex;
@@ -40,6 +41,10 @@
 
     display: flex;
     flex-direction: row;
+
+    .sidebar-empty-block {
+        width: var(--sidebar-panel-width);
+    }
     // justify-content: space-between;
 }
 

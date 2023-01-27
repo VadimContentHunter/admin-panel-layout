@@ -1,6 +1,7 @@
 @charset "UTF-8";
 :root {
   --admin-panel-height: 100px;
+  --sidebar-panel-width: 256px;
 }
 
 /* Указываем box sizing */
@@ -89,6 +90,9 @@ select {
 
 header {
   flex-grow: 1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -122,10 +126,11 @@ header nav.control-panel .logo i {
 }
 
 .main-block nav.sidebar {
+  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 256px;
+  width: var(--sidebar-panel-width);
   background-color: cadetblue;
 }
 .main-block nav.sidebar .logo {
@@ -142,7 +147,7 @@ header nav.control-panel .logo i {
   color: blueviolet;
   background-color: #6ebb79;
 }
-.main-block nav.sidebar ul:nth-child(4) {
+.main-block nav.sidebar ul:nth-child(5) {
   overflow-y: auto;
 }
 
@@ -151,7 +156,8 @@ section.content {
   background-color: #ffdcae;
 }
 section.content h2 {
-  position: fixed;
+  position: sticky;
+  top: var(--admin-panel-height);
 }
 section.content .inf {
   height: 3000px;
@@ -166,7 +172,7 @@ section.content .inf {
   background-color: #fff5e8;
 }
 
-.line-block {
+main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -186,5 +192,8 @@ section.content .inf {
   display: flex;
   flex-direction: row;
 }
+.content-block .sidebar-empty-block {
+  width: var(--sidebar-panel-width);
+}
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main-style.css.map */

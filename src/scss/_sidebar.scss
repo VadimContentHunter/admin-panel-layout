@@ -1,10 +1,12 @@
 
 .main-block nav.sidebar {
+    position: fixed;
+
     display: flex;
     flex-direction: column;
 
     height: 100vh;
-    width: 256px;
+    width: var(--sidebar-panel-width);
     background-color: cadetblue;
 
     .logo {
@@ -29,7 +31,7 @@
         background-color: rgb(110, 187, 121);
     }
 
-    ul:nth-child(4) {
+    ul:nth-child(5) {
         overflow-y: auto;
     }
 
