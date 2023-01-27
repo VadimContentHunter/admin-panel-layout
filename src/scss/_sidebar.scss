@@ -10,17 +10,28 @@
     background-color: cadetblue;
 
     .logo {
-        @extend %flex-block-center;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
 
-        height: var(--admin-panel-height);
+        min-height: var(--header-height);
+        border-bottom: var(--header-border-bottom);
 
-        i {
+        background-color: var(--header-background-color);
+
+        svg {
             width: 50px;
             height: 50px;
-            float: left;
+
+            stroke: var(--main-color);
             background: url(../resources/admin_control_panel_icon_150307.svg) center no-repeat;
-            // background-color: blue;
-            // border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 14pt;
+            color: var(--main-color);
         }
     }
 

@@ -15,8 +15,9 @@ header{
     flex-direction: row;
     justify-content: flex-end;
 
-    height: var(--admin-panel-height);
+    height: var(--header-height);
     background-color: rgb(210, 103, 231);
+    border-bottom: var(--header-border-bottom);
 
     nav.account-control {
         @extend %flex-block-center;

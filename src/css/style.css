@@ -1,6 +1,9 @@
 @charset "UTF-8";
 :root {
-  --admin-panel-height: 100px;
+  --main-color: #D44137;
+  --header-height: 100px;
+  --header-border-bottom: 2px solid #000000;
+  --header-background-color: #ffffff;
   --sidebar-panel-width: 256px;
 }
 
@@ -82,7 +85,7 @@ select {
     scroll-behavior: auto !important;
   }
 } */
-.main-block nav.sidebar .logo, header nav.control-panel, header nav.account-control {
+header nav.control-panel, header nav.account-control {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -96,8 +99,9 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: var(--admin-panel-height);
+  height: var(--header-height);
   background-color: #d267e7;
+  border-bottom: var(--header-border-bottom);
 }
 header nav.account-control {
   padding: 0px 50px;
@@ -134,13 +138,24 @@ header nav.control-panel .logo i {
   background-color: cadetblue;
 }
 .main-block nav.sidebar .logo {
-  height: var(--admin-panel-height);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--header-height);
+  border-bottom: var(--header-border-bottom);
+  background-color: var(--header-background-color);
 }
-.main-block nav.sidebar .logo i {
+.main-block nav.sidebar .logo svg {
   width: 50px;
   height: 50px;
-  float: left;
+  stroke: var(--main-color);
   background: url(../resources/admin_control_panel_icon_150307.svg) center no-repeat;
+}
+.main-block nav.sidebar .logo h1 {
+  font-size: 14pt;
+  color: var(--main-color);
 }
 .main-block nav.sidebar h6 {
   width: 100%;
@@ -157,7 +172,7 @@ section.content {
 }
 section.content h2 {
   position: sticky;
-  top: var(--admin-panel-height);
+  top: var(--header-height);
 }
 section.content .inf {
   height: 3000px;
@@ -170,6 +185,7 @@ section.content .inf {
   width: 1200px;
   margin: auto;
   background-color: #fff5e8;
+  font-family: "Roboto";
 }
 
 main {
@@ -177,14 +193,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.fixed-block {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  width: inherit;
 }
 
 .content-block {
@@ -196,4 +204,4 @@ main {
   width: var(--sidebar-panel-width);
 }
 
-/*# sourceMappingURL=main-style.css.map */
+/*# sourceMappingURL=style.css.map */
