@@ -7,14 +7,14 @@
 
 header{
     flex-grow: 1;
-    position: sticky;
-    top: 0;
-    z-index: $z-index-header;
 
     @extend %flex-row-center;
     justify-content: flex-end;
 
-    height: var(--header-height);
+    position: sticky;
+    top: 0;
+    min-height: var(--header-height);
+    z-index: $z-index-header;
     background-color: var( --header-background-color);
     border-bottom: var(--header-border-bottom);
 
