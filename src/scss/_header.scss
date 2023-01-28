@@ -1,4 +1,4 @@
-%flex-block-center {
+%flex-row-center {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,25 +9,22 @@ header{
     flex-grow: 1;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: $z-index-header;
 
-    display: flex;
-    flex-direction: row;
+    @extend %flex-row-center;
     justify-content: flex-end;
-    align-items: center;
 
     height: var(--header-height);
     background-color: var( --header-background-color);
     border-bottom: var(--header-border-bottom);
 
     nav.account-control {
-        @extend %flex-block-center;
+        @extend %flex-row-center;
         padding: 0px 50px;
         height: 50px;
 
         .notifications {
-            display: flex;
-            align-items: center;
+            @extend %flex-row-center;
             justify-content: center;
 
             width: 50px;
@@ -59,14 +56,13 @@ header{
         }
 
         .account-logo {
-            display: flex;
-            align-items: center;
+            @extend %flex-row-center;
             justify-content: center;
 
             width: 40px;
             height: 40px;
             border: 2px solid var(--icon-color);
-            border-radius: 12px;
+            border-radius: var(--main-border-radius);
             margin-left: 14px;
             margin-right: 8px;
 
@@ -78,16 +74,16 @@ header{
         }
 
         .account-name {
-            display: flex;
-            align-items: center;
+            @extend %flex-row-center;
             justify-content: center;
 
-            p {
-                width: 100px;
+            span {
+                width: 84px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 color: var(--main-text-color);
+                font-size: var(--sidebar-font-size);
             }
 
             svg {
@@ -101,8 +97,7 @@ header{
     }
 
     nav.control-panel {
-        @extend %flex-block-center;
-
+        @extend %flex-row-center;
         visibility: hidden;
 
         .logo {

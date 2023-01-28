@@ -1,10 +1,13 @@
 
+@mixin box-shadow($property) {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+  }
+
 .main-block nav.sidebar {
-    position: fixed;
-    z-index: 100;
-    -webkit-box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
-    box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    z-index: $z-index-sidebar;
+    @include box-shadow(5px 0px 8px -4px rgba(34, 60, 80, 0.2));
 
     display: flex;
     flex-direction: column;
@@ -56,12 +59,15 @@
             flex-direction: column;
             list-style: none;
 
-            font-size: 10pt;
+            font-size: var(--sidebar-font-size);
 
             li {
                 display: grid;
                 grid-template-columns: 50px 1fr;
                 align-items: center;
+                border-radius: var(--main-border-radius);
+                padding: 4px 8px;
+                margin: 4px 0px;
                 margin-right: 8px;
 
                 svg {
@@ -82,7 +88,8 @@
             }
 
             li.activated {
-                border-right: 2px solid var(--main-color);
+                // border-right: 2px solid var(--main-color);
+                background-color: #f3f3f3;
                 // background-color: #f3f3f3;
             }
         }

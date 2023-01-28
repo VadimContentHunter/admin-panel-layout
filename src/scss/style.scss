@@ -1,48 +1,68 @@
 :root {
     --main-logo-color: #949494;
     --main-color: #D44137;
-    --icon-color: #949494;
+    --main-border-radius: 8px;
     --main-text-color: #6F6F6F;
+    --icon-color: #949494;
     --header-height: 60px;
     --header-border-bottom: 2px solid #f1f1f1;
     --header-background-color: #ffffff;
     --sidebar-panel-width: 256px;
-  }
-// $admin_panel_height: 100px;
+    --sidebar-font-size: 13px;
+}
+
+$z-index-sidebar: 100;
+$z-index-header: 90;
 
 @import 'reset';
 @import 'header';
 @import 'sidebar';
 @import 'content';
 
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #f3f3f3;
+    border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #c9c9c9;
+    border-radius: 8px;
+}
+
 .main-block {
     display: flex;
     flex-direction: row;
 
     min-height: 100vh;
-    width: 1200px;
+    min-width: 1200px;
     margin: auto;
 
-    font-family: "Roboto";
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serifsans-serif";
     // font-family: "Sofia Sans";
 }
 
 main {
+    height: 100vh;
     flex-grow: 1;
+    overflow-y: auto;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.content-block {
-    flex-grow: 1;
-    z-index: 50;
+// .content-block {
+//     flex-grow: 1;
+//     z-index: 50;
 
-    display: flex;
-    flex-direction: row;
+//     display: flex;
+//     flex-direction: row;
 
-    .sidebar-empty-block {
-        width: var(--sidebar-panel-width);
-    }
-}
+//     .sidebar-empty-block {
+//         width: var(--sidebar-panel-width);
+//     }
+// }
