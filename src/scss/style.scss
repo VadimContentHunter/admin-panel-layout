@@ -2,17 +2,49 @@
     --main-logo-color: #949494;
     --main-color: #D44137;
     --main-border-radius: 8px;
-    --main-text-color: #6F6F6F;
     --icon-color: #949494;
     --header-height: 68px;
     --header-border-bottom: 2px solid #f1f1f1;
     --header-background-color: #ffffff;
+    --header-element-padding: 4px 8px 4px 8px;
+    --header-text-color: #6F6F6F;
     --sidebar-panel-width: 256px;
     --sidebar-font-size: 13px;
 }
 
 $z-index-sidebar: 100;
 $z-index-header: 90;
+
+@mixin box-shadow($property) {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+}
+
+@mixin reset-a-effects($color) {
+    a:active,
+    a:hover,
+    a:visited,
+    a:hover,
+    a {
+        outline: none;
+        text-decoration: none;
+        color: $color;
+    }
+}
+
+%flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+%menu-item-li {
+    border-radius: var(--main-border-radius);
+    padding: 4px 8px;
+    margin: 4px 0px;
+}
 
 @import 'reset';
 @import 'header';
@@ -54,15 +86,3 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
-
-// .content-block {
-//     flex-grow: 1;
-//     z-index: 50;
-
-//     display: flex;
-//     flex-direction: row;
-
-//     .sidebar-empty-block {
-//         width: var(--sidebar-panel-width);
-//     }
-// }

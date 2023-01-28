@@ -1,10 +1,4 @@
 
-@mixin box-shadow($property) {
-    -webkit-box-shadow: $property;
-    -moz-box-shadow: $property;
-    box-shadow: $property;
-  }
-
 .main-block nav.sidebar {
     z-index: $z-index-sidebar;
     @include box-shadow(5px 0px 8px -4px rgba(34, 60, 80, 0.2));
@@ -15,7 +9,9 @@
     height: 100vh;
     width: var(--sidebar-panel-width);
     background-color: #ffffff;
-    color: var(--main-text-color);
+
+    color: var(--header-text-color);
+    font-size: var(--sidebar-font-size);
 
     h6{
         color: #949494;
@@ -54,20 +50,21 @@
         padding: 0px 14px;
         margin: 12px 0px;
 
-        ul {
+        menu {
             display: flex;
             flex-direction: column;
             list-style: none;
 
-            font-size: var(--sidebar-font-size);
-
             li {
+                &:hover {
+                    background-color: #f3f3f3;
+                    cursor: pointer;
+                }
+
                 display: grid;
                 grid-template-columns: 50px 1fr;
                 align-items: center;
-                border-radius: var(--main-border-radius);
-                padding: 4px 8px;
-                margin: 4px 0px;
+                @extend %menu-item-li;
                 margin-right: 8px;
 
                 svg {
@@ -76,15 +73,7 @@
                     fill: var(--icon-color);
                 }
 
-                a {
-                    outline: none;
-                    text-decoration: none;
-                }
-
-                &:hover {
-                    background-color: #f3f3f3;
-                    cursor: pointer;
-                }
+                @include reset-a-effects(var(--header-text-color));
             }
 
             li.activated {
@@ -99,7 +88,7 @@
         overflow-y: hidden;
         margin-bottom: 20px;
 
-        ul {
+        menu {
             overflow-y: auto;
         }
     }

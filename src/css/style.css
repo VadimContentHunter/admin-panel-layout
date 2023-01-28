@@ -3,13 +3,26 @@
   --main-logo-color: #949494;
   --main-color: #D44137;
   --main-border-radius: 8px;
-  --main-text-color: #6F6F6F;
   --icon-color: #949494;
   --header-height: 68px;
   --header-border-bottom: 2px solid #f1f1f1;
   --header-background-color: #ffffff;
+  --header-element-padding: 4px 8px 4px 8px;
+  --header-text-color: #6F6F6F;
   --sidebar-panel-width: 256px;
   --sidebar-font-size: 13px;
+}
+
+header nav.control-panel, header nav.account-control .account-block .account-block-main .account-name, header nav.account-control .account-block .account-block-main .account-logo, header nav.account-control .account-block .account-block-main, header nav.account-control .notifications, header nav.account-control, header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-block nav.sidebar section menu li, header nav.account-control .account-block:hover .account-block-menu menu li {
+  border-radius: var(--main-border-radius);
+  padding: 4px 8px;
+  margin: 4px 0px;
 }
 
 /* Указываем box sizing */
@@ -21,6 +34,7 @@
 
 /* Убираем внутренние отступы */
 ul,
+menu,
 ol[class] {
   padding: 0;
 }
@@ -39,7 +53,8 @@ figure,
 figcaption,
 blockquote,
 dl,
-dd {
+dd,
+menu {
   margin: 0;
 }
 
@@ -90,12 +105,6 @@ select {
     scroll-behavior: auto !important;
   }
 } */
-header nav.control-panel, header nav.account-control .account-name, header nav.account-control .account-logo, header nav.account-control .notifications, header nav.account-control, header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 header {
   flex-grow: 1;
   justify-content: flex-end;
@@ -105,15 +114,22 @@ header {
   z-index: 90;
   background-color: var(--header-background-color);
   border-bottom: var(--header-border-bottom);
+  color: var(--header-text-color);
+  font-size: var(--sidebar-font-size);
 }
 header nav.account-control {
-  padding: 0px 50px;
+  margin: 0px 40px;
   height: 50px;
 }
 header nav.account-control .notifications {
   justify-content: center;
-  width: 50px;
   height: inherit;
+  border-radius: var(--main-border-radius);
+  padding: var(--header-element-padding);
+}
+header nav.account-control .notifications:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
 }
 header nav.account-control .notifications svg {
   width: 24px;
@@ -135,32 +151,71 @@ header nav.account-control .notifications::after {
   font-weight: bold;
   background-color: var(--main-color);
 }
-header nav.account-control .account-logo {
+header nav.account-control .account-block {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  border-radius: var(--main-border-radius);
+  padding: var(--header-element-padding);
+}
+header nav.account-control .account-block:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+header nav.account-control .account-block:hover .account-block-menu {
+  display: block;
+  margin: 4px;
+  padding: 8px 0px;
+  border-radius: var(--main-border-radius);
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+}
+header nav.account-control .account-block:hover .account-block-menu menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header nav.account-control .account-block:hover .account-block-menu menu li:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+header nav.account-control .account-block:hover .account-block-menu menu a:active,
+header nav.account-control .account-block:hover .account-block-menu menu a:hover,
+header nav.account-control .account-block:hover .account-block-menu menu a:visited,
+header nav.account-control .account-block:hover .account-block-menu menu a:hover,
+header nav.account-control .account-block:hover .account-block-menu menu a {
+  outline: none;
+  text-decoration: none;
+  color: var(--header-text-color);
+}
+header nav.account-control .account-block .account-block-menu {
+  display: none;
+}
+header nav.account-control .account-block .account-block-main .account-logo {
   justify-content: center;
   width: 40px;
   height: 40px;
   border: 2px solid var(--icon-color);
   border-radius: var(--main-border-radius);
-  margin-left: 14px;
   margin-right: 8px;
 }
-header nav.account-control .account-logo svg {
+header nav.account-control .account-block .account-block-main .account-logo svg {
   width: 24px;
   height: 24px;
   fill: var(--icon-color);
 }
-header nav.account-control .account-name {
+header nav.account-control .account-block .account-block-main .account-name {
   justify-content: center;
 }
-header nav.account-control .account-name span {
+header nav.account-control .account-block .account-block-main .account-name span {
   width: 84px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--main-text-color);
-  font-size: var(--sidebar-font-size);
 }
-header nav.account-control .account-name svg {
+header nav.account-control .account-block .account-block-main .account-name svg {
   width: 20px;
   height: 20px;
   transform: rotate(180deg);
@@ -191,7 +246,8 @@ header nav.control-panel .logo i {
   height: 100vh;
   width: var(--sidebar-panel-width);
   background-color: #ffffff;
-  color: var(--main-text-color);
+  color: var(--header-text-color);
+  font-size: var(--sidebar-font-size);
 }
 .main-block nav.sidebar h6 {
   color: #949494;
@@ -224,42 +280,43 @@ header nav.control-panel .logo i {
   padding: 0px 14px;
   margin: 12px 0px;
 }
-.main-block nav.sidebar section ul {
+.main-block nav.sidebar section menu {
   display: flex;
   flex-direction: column;
   list-style: none;
-  font-size: var(--sidebar-font-size);
 }
-.main-block nav.sidebar section ul li {
+.main-block nav.sidebar section menu li {
   display: grid;
   grid-template-columns: 50px 1fr;
   align-items: center;
-  border-radius: var(--main-border-radius);
-  padding: 4px 8px;
-  margin: 4px 0px;
   margin-right: 8px;
 }
-.main-block nav.sidebar section ul li svg {
+.main-block nav.sidebar section menu li:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+.main-block nav.sidebar section menu li svg {
   height: 40px;
   width: 40px;
   fill: var(--icon-color);
 }
-.main-block nav.sidebar section ul li a {
+.main-block nav.sidebar section menu li a:active,
+.main-block nav.sidebar section menu li a:hover,
+.main-block nav.sidebar section menu li a:visited,
+.main-block nav.sidebar section menu li a:hover,
+.main-block nav.sidebar section menu li a {
   outline: none;
   text-decoration: none;
+  color: var(--header-text-color);
 }
-.main-block nav.sidebar section ul li:hover {
-  background-color: #f3f3f3;
-  cursor: pointer;
-}
-.main-block nav.sidebar section ul li.activated {
+.main-block nav.sidebar section menu li.activated {
   background-color: #f3f3f3;
 }
 .main-block nav.sidebar section.modules-items {
   overflow-y: hidden;
   margin-bottom: 20px;
 }
-.main-block nav.sidebar section.modules-items ul {
+.main-block nav.sidebar section.modules-items menu {
   overflow-y: auto;
 }
 

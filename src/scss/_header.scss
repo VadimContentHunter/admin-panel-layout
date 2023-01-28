@@ -1,9 +1,3 @@
-%flex-row-center {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 
 header{
     flex-grow: 1;
@@ -18,17 +12,28 @@ header{
     background-color: var( --header-background-color);
     border-bottom: var(--header-border-bottom);
 
+    color: var(--header-text-color);
+    font-size: var(--sidebar-font-size);
+
     nav.account-control {
         @extend %flex-row-center;
-        padding: 0px 50px;
+        margin: 0px 40px;
         height: 50px;
+
 
         .notifications {
             @extend %flex-row-center;
             justify-content: center;
 
-            width: 50px;
             height: inherit;
+            border-radius: var(--main-border-radius);
+            padding: var(--header-element-padding);
+
+
+            &:hover {
+                background-color: #f3f3f3;
+                cursor: pointer;
+            }
 
             svg {
                 width: 24px;
@@ -55,43 +60,95 @@ header{
             }
         }
 
-        .account-logo {
-            @extend %flex-row-center;
-            justify-content: center;
+        .account-block {
+            display: flex;
+            flex-direction: column;
 
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--icon-color);
+            height: inherit;
             border-radius: var(--main-border-radius);
-            margin-left: 14px;
-            margin-right: 8px;
+            padding: var(--header-element-padding);
 
-            svg {
-                width: 24px;
-                height: 24px;
-                fill: var(--icon-color);
+
+            &:hover {
+                background-color: #f3f3f3;
+                cursor: pointer;
+
+
+                .account-block-menu {
+                    display: block;
+                    margin: 4px;
+                    padding: 8px 0px;
+                    border-radius: var(--main-border-radius);
+                    background-color: #ffffff;
+                    @include box-shadow(0px 5px 10px -0px rgba(34, 60, 80, 0.2));
+
+
+                    menu {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+
+                        li {
+                            @extend %menu-item-li;
+
+                            &:hover {
+                                background-color: #f3f3f3;
+                                cursor: pointer;
+                            }
+                        }
+
+                        @include reset-a-effects(var(--header-text-color));
+                    }
+                }
             }
-        }
 
-        .account-name {
-            @extend %flex-row-center;
-            justify-content: center;
-
-            span {
-                width: 84px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                color: var(--main-text-color);
-                font-size: var(--sidebar-font-size);
+            .account-block-menu {
+                display: none;
             }
 
-            svg {
-                width: 20px;
-                height: 20px;
-                transform: rotate(180deg);
-                fill: var(--icon-color);
+            .account-block-main {
+                @extend %flex-row-center;
+
+
+                .account-logo {
+                    @extend %flex-row-center;
+                    justify-content: center;
+
+                    width: 40px;
+                    height: 40px;
+                    border: 2px solid var(--icon-color);
+                    border-radius: var(--main-border-radius);
+                    margin-right: 8px;
+
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                        fill: var(--icon-color);
+                    }
+                }
+
+                .account-name {
+                    @extend %flex-row-center;
+                    justify-content: center;
+
+
+                    span {
+                        width: 84px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        transform: rotate(180deg);
+                        fill: var(--icon-color);
+                    }
+                }
             }
+
         }
 
     }
@@ -100,9 +157,11 @@ header{
         @extend %flex-row-center;
         visibility: hidden;
 
+
         .logo {
             width: 50px;
             height: 50px;
+
 
             i {
                 width: inherit;
