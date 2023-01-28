@@ -254,6 +254,7 @@ header nav.control-panel .logo i {
 }
 .main-block nav.sidebar section ul li:hover {
   background-color: #f3f3f3;
+  cursor: pointer;
 }
 .main-block nav.sidebar section ul li.activated {
   border-right: 2px solid var(--main-color);
