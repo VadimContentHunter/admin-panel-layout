@@ -1,13 +1,17 @@
 
 .main-block nav.sidebar {
     position: fixed;
+    z-index: 100;
+    -webkit-box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
 
     display: flex;
     flex-direction: column;
 
     height: 100vh;
     width: var(--sidebar-panel-width);
-    background-color: cadetblue;
+    background-color: #ffffff;
 
     .logo {
         display: flex;
@@ -17,8 +21,6 @@
         justify-content: center;
 
         min-height: var(--header-height);
-        border-bottom: var(--header-border-bottom);
-
         background-color: var(--header-background-color);
 
         svg {

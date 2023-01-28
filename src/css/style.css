@@ -1,8 +1,10 @@
 @charset "UTF-8";
 :root {
   --main-color: #D44137;
-  --header-height: 100px;
-  --header-border-bottom: 2px solid #000000;
+  --icon-color: #949494;
+  --main-text-color: #6F6F6F;
+  --header-height: 60px;
+  --header-border-bottom: 2px solid #f1f1f1;
   --header-background-color: #ffffff;
   --sidebar-panel-width: 256px;
 }
@@ -99,23 +101,78 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   height: var(--header-height);
-  background-color: #d267e7;
+  background-color: var(--header-background-color);
   border-bottom: var(--header-border-bottom);
 }
 header nav.account-control {
   padding: 0px 50px;
-}
-header nav.account-control .account-logo {
-  width: 50px;
   height: 50px;
 }
-header nav.account-control .account-logo i {
-  width: inherit;
+header nav.account-control .notifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
   height: inherit;
-  float: left;
-  background-color: #ff76b6;
+}
+header nav.account-control .notifications svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--icon-color);
+}
+header nav.account-control .notifications::after {
+  position: relative;
+  top: -10px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
+  padding-top: 0px;
+  text-align: center;
+  content: attr(value);
+  color: white;
+  font-size: 10pt;
+  font-weight: bold;
+  background-color: var(--main-color);
+}
+header nav.account-control .account-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--icon-color);
+  border-radius: 12px;
+  margin-left: 14px;
+  margin-right: 8px;
+}
+header nav.account-control .account-logo svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--icon-color);
+}
+header nav.account-control .account-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav.account-control .account-name p {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--main-text-color);
+}
+header nav.account-control .account-name svg {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+  fill: var(--icon-color);
+}
+header nav.control-panel {
+  visibility: hidden;
 }
 header nav.control-panel .logo {
   width: 50px;
@@ -131,11 +188,15 @@ header nav.control-panel .logo i {
 
 .main-block nav.sidebar {
   position: fixed;
+  z-index: 100;
+  -webkit-box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 5px 0px 8px 0px rgba(34, 60, 80, 0.2);
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: var(--sidebar-panel-width);
-  background-color: cadetblue;
+  background-color: #ffffff;
 }
 .main-block nav.sidebar .logo {
   display: flex;
@@ -144,7 +205,6 @@ header nav.control-panel .logo i {
   align-items: center;
   justify-content: center;
   min-height: var(--header-height);
-  border-bottom: var(--header-border-bottom);
   background-color: var(--header-background-color);
 }
 .main-block nav.sidebar .logo svg {
@@ -168,7 +228,7 @@ header nav.control-panel .logo i {
 
 section.content {
   flex-grow: 1;
-  background-color: #ffdcae;
+  background-color: #F9F9FD;
 }
 section.content h2 {
   position: sticky;
@@ -184,7 +244,6 @@ section.content .inf {
   min-height: 100vh;
   width: 1200px;
   margin: auto;
-  background-color: #fff5e8;
   font-family: "Roboto";
 }
 
@@ -197,6 +256,7 @@ main {
 
 .content-block {
   flex-grow: 1;
+  z-index: 50;
   display: flex;
   flex-direction: row;
 }

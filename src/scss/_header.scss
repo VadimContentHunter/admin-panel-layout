@@ -14,25 +14,87 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
 
     height: var(--header-height);
-    background-color: rgb(210, 103, 231);
+    background-color: var( --header-background-color);
     border-bottom: var(--header-border-bottom);
 
     nav.account-control {
         @extend %flex-block-center;
         padding: 0px 50px;
+        height: 50px;
+
+        .notifications {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 50px;
+            height: inherit;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                fill: var(--icon-color);
+            }
+
+            &::after {
+                position: relative;
+                top: -10px;
+                right: 4px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+
+                padding-top: 0px;
+                text-align: center;
+
+                content: attr(value);
+                color: white;
+                font-size: 10pt;
+                font-weight: bold;
+                background-color: var(--main-color);
+            }
+        }
 
         .account-logo {
-            width: 50px;
-            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            i {
-                width: inherit;
-                height: inherit;
-                float: left;
-                background-color: rgb(255, 118, 182);
-                border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--icon-color);
+            border-radius: 12px;
+            margin-left: 14px;
+            margin-right: 8px;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                fill: var(--icon-color);
+            }
+        }
+
+        .account-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                width: 100px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: var(--main-text-color);
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                transform: rotate(180deg);
+                fill: var(--icon-color);
             }
         }
 
@@ -40,6 +102,8 @@ header{
 
     nav.control-panel {
         @extend %flex-block-center;
+
+        visibility: hidden;
 
         .logo {
             width: 50px;
