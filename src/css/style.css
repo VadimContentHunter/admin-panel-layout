@@ -1,5 +1,6 @@
 @charset "UTF-8";
 :root {
+  --main-logo-color: #949494;
   --main-color: #D44137;
   --icon-color: #949494;
   --main-text-color: #6F6F6F;
@@ -17,7 +18,7 @@
 }
 
 /* Убираем внутренние отступы */
-ul[class],
+ul,
 ol[class] {
   padding: 0;
 }
@@ -29,7 +30,7 @@ h2,
 h3,
 h4,
 p,
-ul[class],
+ul,
 ol[class],
 li,
 figure,
@@ -197,6 +198,13 @@ header nav.control-panel .logo i {
   height: 100vh;
   width: var(--sidebar-panel-width);
   background-color: #ffffff;
+  color: var(--main-text-color);
+}
+.main-block nav.sidebar h6 {
+  color: #949494;
+  margin: 8px 0px;
+  font-size: 8pt;
+  font-weight: normal;
 }
 .main-block nav.sidebar .logo {
   display: flex;
@@ -210,19 +218,51 @@ header nav.control-panel .logo i {
 .main-block nav.sidebar .logo svg {
   width: 50px;
   height: 50px;
-  stroke: var(--main-color);
+  stroke: var(--main-logo-color);
   background: url(../resources/admin_control_panel_icon_150307.svg) center no-repeat;
 }
 .main-block nav.sidebar .logo h1 {
   font-size: 14pt;
-  color: var(--main-color);
+  color: var(--main-logo-color);
 }
-.main-block nav.sidebar h6 {
-  width: 100%;
-  color: blueviolet;
-  background-color: #6ebb79;
+.main-block nav.sidebar section {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 14px;
+  margin: 12px 0px;
 }
-.main-block nav.sidebar ul:nth-child(5) {
+.main-block nav.sidebar section ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-size: 10pt;
+}
+.main-block nav.sidebar section ul li {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  margin-right: 8px;
+}
+.main-block nav.sidebar section ul li svg {
+  height: 40px;
+  width: 40px;
+  fill: var(--icon-color);
+}
+.main-block nav.sidebar section ul li a {
+  outline: none;
+  text-decoration: none;
+}
+.main-block nav.sidebar section ul li:hover {
+  background-color: #f3f3f3;
+}
+.main-block nav.sidebar section ul li.activated {
+  border-right: 2px solid var(--main-color);
+}
+.main-block nav.sidebar section.modules-items {
+  overflow-y: hidden;
+  margin-bottom: 20px;
+}
+.main-block nav.sidebar section.modules-items ul {
   overflow-y: auto;
 }
 
