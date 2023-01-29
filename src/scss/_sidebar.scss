@@ -1,6 +1,6 @@
 
 .main-block nav.sidebar {
-    z-index: $z-index-sidebar;
+    z-index: $sidebar-z-index;
     @include box-shadow(5px 0px 8px -4px rgba(34, 60, 80, 0.2));
 
     display: flex;

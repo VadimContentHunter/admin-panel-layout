@@ -8,7 +8,7 @@ header{
     position: sticky;
     top: 0;
     min-height: var(--header-height);
-    z-index: $z-index-header;
+    z-index: $header-z-index;
     background-color: var( --header-background-color);
     border-bottom: var(--header-border-bottom);
 
@@ -74,31 +74,9 @@ header{
                 cursor: pointer;
 
 
-                .account-block-menu {
+                .sub-menu {
                     display: block;
-                    margin: 4px;
-                    padding: 8px 0px;
-                    border-radius: var(--main-border-radius);
-                    background-color: #ffffff;
-                    @include box-shadow(0px 5px 10px -0px rgba(34, 60, 80, 0.2));
-
-
-                   > menu {
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
-
-                        li {
-                            @extend %menu-item-li;
-
-                            &:hover {
-                                background-color: #f3f3f3;
-                                cursor: pointer;
-                            }
-                        }
-
-                        @include reset-a-effects(var(--header-text-color));
-                    }
+                    margin: 4px 0px;
                 }
             }
 

@@ -18,7 +18,7 @@ header nav.control-panel, header nav.account-control .account-block .account-blo
   align-items: center;
 }
 
-.main-block nav.sidebar section > menu li, header nav.account-control .account-block:hover .account-block-menu > menu li {
+.sub-menu > menu li, .main-block nav.sidebar section > menu li {
   border-radius: var(--main-border-radius);
   padding: 4px 8px;
   margin: 4px 0px;
@@ -81,33 +81,9 @@ header nav.account-control .account-block:hover {
   background-color: #f3f3f3;
   cursor: pointer;
 }
-header nav.account-control .account-block:hover .account-block-menu {
+header nav.account-control .account-block:hover .sub-menu {
   display: block;
-  margin: 4px;
-  padding: 8px 0px;
-  border-radius: var(--main-border-radius);
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
-  box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
-}
-header nav.account-control .account-block:hover .account-block-menu > menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-header nav.account-control .account-block:hover .account-block-menu > menu li:hover {
-  background-color: #f3f3f3;
-  cursor: pointer;
-}
-header nav.account-control .account-block:hover .account-block-menu > menu a:active,
-header nav.account-control .account-block:hover .account-block-menu > menu a:hover,
-header nav.account-control .account-block:hover .account-block-menu > menu a:visited,
-header nav.account-control .account-block:hover .account-block-menu > menu a:hover,
-header nav.account-control .account-block:hover .account-block-menu > menu a {
-  outline: none;
-  text-decoration: none;
-  color: var(--header-text-color);
+  margin: 4px 0px;
 }
 header nav.account-control .account-block .account-block-menu {
   display: none;
@@ -239,6 +215,20 @@ header nav.control-panel .logo i {
   overflow-y: auto;
 }
 
+nav.sidebar-menu {
+  position: fixed;
+  z-index: 150;
+  left: calc( var(--sidebar-panel-width) + 10px );
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: var(--header-text-color);
+  font-size: var(--sidebar-font-size);
+}
+nav.sidebar-menu .sub-menu {
+  min-width: 120px;
+}
+
 section.content {
   flex-grow: 1;
   padding: 24px;
@@ -282,6 +272,34 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.sub-menu {
+  display: none;
+  padding: 8px 0px;
+  border-radius: var(--main-border-radius);
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+}
+.sub-menu > menu {
+  list-style: none;
+  overflow-y: auto;
+  max-height: 150px;
+}
+.sub-menu > menu li:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+.sub-menu > menu a:active,
+.sub-menu > menu a:hover,
+.sub-menu > menu a:visited,
+.sub-menu > menu a:hover,
+.sub-menu > menu a {
+  outline: none;
+  text-decoration: none;
+  color: var(--header-text-color);
 }
 
 /*# sourceMappingURL=style.css.map */
