@@ -1,5 +1,5 @@
 
-nav.sidebar-menu {
+section.sidebar-menu {
     position: fixed;
     z-index: $sidebar-menu-z-index;
     left: calc( var(--sidebar-panel-width) + #{$sidebar-menu-indent} );

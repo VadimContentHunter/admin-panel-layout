@@ -1,5 +1,5 @@
 
-.main-block nav.sidebar {
+.main-block section.sidebar {
     z-index: $sidebar-z-index;
     @include box-shadow(5px 0px 8px -4px rgba(34, 60, 80, 0.2));
 
