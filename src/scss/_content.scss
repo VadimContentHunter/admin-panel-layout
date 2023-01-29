@@ -1,4 +1,4 @@
-section.content{
+section.content-block{
     flex-grow: 1;
     padding: 24px;
     background-color: #F9F9FD;
@@ -8,7 +8,7 @@ section.content{
         top: var(--header-height);
     }
 
-    .inf {
+    .content {
         height: 3000px;
     }
 }

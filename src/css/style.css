@@ -229,16 +229,16 @@ section.sidebar-menu .sub-menu {
   min-width: 120px;
 }
 
-section.content {
+section.content-block {
   flex-grow: 1;
   padding: 24px;
   background-color: #F9F9FD;
 }
-section.content h2 {
+section.content-block h2 {
   position: sticky;
   top: var(--header-height);
 }
-section.content .inf {
+section.content-block .content {
   height: 3000px;
 }
 
