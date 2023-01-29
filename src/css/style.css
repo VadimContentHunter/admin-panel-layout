@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --main-logo-color: #949494;
   --main-color: #D44137;
@@ -19,92 +18,12 @@ header nav.control-panel, header nav.account-control .account-block .account-blo
   align-items: center;
 }
 
-.main-block nav.sidebar section menu li, header nav.account-control .account-block:hover .account-block-menu menu li {
+.main-block nav.sidebar section > menu li, header nav.account-control .account-block:hover .account-block-menu > menu li {
   border-radius: var(--main-border-radius);
   padding: 4px 8px;
   margin: 4px 0px;
 }
 
-/* Указываем box sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Убираем внутренние отступы */
-ul,
-menu,
-ol[class] {
-  padding: 0;
-}
-
-/* Убираем внешние отступы */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd,
-menu {
-  margin: 0;
-}
-
-/* Выставляем основные настройки по-умолчанию для body */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-ul[class],
-ol[class] {
-  list-style: none;
-}
-
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Упрощаем работу с изображениями */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
-  margin-top: 1em;
-}
-
-/* Наследуем шрифты для инпутов и кнопок */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-/* @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-} */
 header {
   flex-grow: 1;
   justify-content: flex-end;
@@ -140,10 +59,10 @@ header nav.account-control .notifications::after {
   position: relative;
   top: -10px;
   right: 4px;
-  width: 20px;
+  width: 24px;
   height: 20px;
   border-radius: 50%;
-  padding-top: 0px;
+  padding-top: 5px;
   text-align: center;
   content: attr(value);
   color: white;
@@ -172,20 +91,20 @@ header nav.account-control .account-block:hover .account-block-menu {
   -moz-box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
 }
-header nav.account-control .account-block:hover .account-block-menu menu {
+header nav.account-control .account-block:hover .account-block-menu > menu {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-header nav.account-control .account-block:hover .account-block-menu menu li:hover {
+header nav.account-control .account-block:hover .account-block-menu > menu li:hover {
   background-color: #f3f3f3;
   cursor: pointer;
 }
-header nav.account-control .account-block:hover .account-block-menu menu a:active,
-header nav.account-control .account-block:hover .account-block-menu menu a:hover,
-header nav.account-control .account-block:hover .account-block-menu menu a:visited,
-header nav.account-control .account-block:hover .account-block-menu menu a:hover,
-header nav.account-control .account-block:hover .account-block-menu menu a {
+header nav.account-control .account-block:hover .account-block-menu > menu a:active,
+header nav.account-control .account-block:hover .account-block-menu > menu a:hover,
+header nav.account-control .account-block:hover .account-block-menu > menu a:visited,
+header nav.account-control .account-block:hover .account-block-menu > menu a:hover,
+header nav.account-control .account-block:hover .account-block-menu > menu a {
   outline: none;
   text-decoration: none;
   color: var(--header-text-color);
@@ -280,36 +199,36 @@ header nav.control-panel .logo i {
   padding: 0px 14px;
   margin: 12px 0px;
 }
-.main-block nav.sidebar section menu {
+.main-block nav.sidebar section > menu {
   display: flex;
   flex-direction: column;
   list-style: none;
 }
-.main-block nav.sidebar section menu li {
+.main-block nav.sidebar section > menu li {
   display: grid;
   grid-template-columns: 50px 1fr;
   align-items: center;
   margin-right: 8px;
 }
-.main-block nav.sidebar section menu li:hover {
+.main-block nav.sidebar section > menu li:hover {
   background-color: #f3f3f3;
   cursor: pointer;
 }
-.main-block nav.sidebar section menu li svg {
+.main-block nav.sidebar section > menu li svg {
   height: 40px;
   width: 40px;
   fill: var(--icon-color);
 }
-.main-block nav.sidebar section menu li a:active,
-.main-block nav.sidebar section menu li a:hover,
-.main-block nav.sidebar section menu li a:visited,
-.main-block nav.sidebar section menu li a:hover,
-.main-block nav.sidebar section menu li a {
+.main-block nav.sidebar section > menu li a:active,
+.main-block nav.sidebar section > menu li a:hover,
+.main-block nav.sidebar section > menu li a:visited,
+.main-block nav.sidebar section > menu li a:hover,
+.main-block nav.sidebar section > menu li a {
   outline: none;
   text-decoration: none;
   color: var(--header-text-color);
 }
-.main-block nav.sidebar section menu li.activated {
+.main-block nav.sidebar section > menu li.activated {
   background-color: #f3f3f3;
 }
 .main-block nav.sidebar section.modules-items {

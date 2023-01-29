@@ -39,14 +39,12 @@ $z-index-header: 90;
     align-items: center;
 }
 
-
 %menu-item-li {
     border-radius: var(--main-border-radius);
     padding: 4px 8px;
     margin: 4px 0px;
 }
 
-@import 'reset';
 @import 'header';
 @import 'sidebar';
 @import 'content';
