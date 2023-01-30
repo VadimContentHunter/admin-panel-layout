@@ -4,40 +4,6 @@ $sidebar-menu-z-index: 150;
 $sidebar-z-index: 100;
 $header-z-index: 90;
 
-:root {
-    --main-logo-color: #949494;
-    --main-color: #D44137;
-    --main-border-radius: 8px;
-    --main-color-text: #444444;
-    --icon-color: #949494;
-    --header-height: 68px;
-    --header-border-bottom: 2px solid #f1f1f1;
-    --header-background-color: #ffffff;
-    --header-element-padding: 4px 8px 4px 8px;
-    --header-text-color: #6F6F6F;
-    --header-background-active: #f3f3f3;
-    --sidebar-panel-width: 256px;
-    --sidebar-font-size: 13px;
-    --item-container-column-size: 80px;
-}
-
-@mixin box-shadow($property) {
-    -webkit-box-shadow: $property;
-    -moz-box-shadow: $property;
-    box-shadow: $property;
-}
-
-@mixin reset-a-effects($color) {
-    a:active,
-    a:hover,
-    a:visited,
-    a:hover,
-    a {
-        outline: none;
-        text-decoration: none;
-        color: $color;
-    }
-}
 
 %flex-row-center {
     display: flex;
@@ -51,24 +17,11 @@ $header-z-index: 90;
     margin: 4px 0px;
 }
 
+@import '../common_styles';
 @import 'header';
 @import 'sidebar';
 @import 'sidebar_menu';
 @import 'content';
-
-*::-webkit-scrollbar {
-    width: 10px;
-}
-
-*::-webkit-scrollbar-track {
-    background-color: #f3f3f3;
-    border-radius: 8px;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: #c9c9c9;
-    border-radius: 8px;
-}
 
 .main-block {
     display: flex;
@@ -78,7 +31,7 @@ $header-z-index: 90;
     // min-width: 1200px;
     margin: auto;
 
-    font-family: "Roboto", "Helvetica", "Arial", "sans-serifsans-serif";
+    // font-family: "Roboto", "Helvetica", "Arial", "sans-serifsans-serif";
     // font-family: "Sofia Sans";
 }
 

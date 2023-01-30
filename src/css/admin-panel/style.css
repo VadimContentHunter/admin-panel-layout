@@ -1,8 +1,21 @@
+header section.control-panel, header section.account-control .account-block .account-block-main .account-name, header section.account-control .account-block .account-block-main .account-logo, header section.account-control .account-block .account-block-main, header section.account-control .notifications, header section.account-control, header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sub-menu > menu li, .main-block section.sidebar section > menu li {
+  border-radius: var(--main-border-radius);
+  padding: 4px 8px;
+  margin: 4px 0px;
+}
+
 :root {
   --main-logo-color: #949494;
   --main-color: #D44137;
   --main-border-radius: 8px;
   --main-color-text: #444444;
+  --main-content-color:
   --icon-color: #949494;
   --header-height: 68px;
   --header-border-bottom: 2px solid #f1f1f1;
@@ -15,16 +28,22 @@
   --item-container-column-size: 80px;
 }
 
-header section.control-panel, header section.account-control .account-block .account-block-main .account-name, header section.account-control .account-block .account-block-main .account-logo, header section.account-control .account-block .account-block-main, header section.account-control .notifications, header section.account-control, header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+*::-webkit-scrollbar {
+  width: 10px;
 }
 
-.sub-menu > menu li, .main-block section.sidebar section > menu li {
-  border-radius: var(--main-border-radius);
-  padding: 4px 8px;
-  margin: 4px 0px;
+*::-webkit-scrollbar-track {
+  background-color: #f3f3f3;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9;
+  border-radius: 8px;
+}
+
+body {
+  font-family: "Roboto", "Helvetica", "Arial", "sans-serifsans-serif";
 }
 
 header {
@@ -236,7 +255,7 @@ section.sidebar-menu .sub-menu {
 .content-wrapper {
   flex-grow: 1;
   padding: 32px 4%;
-  background-color: #F9F9FD;
+  background-color: var(--main-content-color);
   overflow: auto;
 }
 .content-wrapper h2 {
@@ -371,26 +390,11 @@ section.sidebar-menu .sub-menu {
   height: 500px;
 }
 
-*::-webkit-scrollbar {
-  width: 10px;
-}
-
-*::-webkit-scrollbar-track {
-  background-color: #f3f3f3;
-  border-radius: 8px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #c9c9c9;
-  border-radius: 8px;
-}
-
 .main-block {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
   margin: auto;
-  font-family: "Roboto", "Helvetica", "Arial", "sans-serifsans-serif";
 }
 
 main {
