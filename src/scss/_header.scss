@@ -8,6 +8,7 @@ header{
     position: sticky;
     top: 0;
     min-height: var(--header-height);
+    max-height: var(--header-height);
     z-index: $header-z-index;
     background-color: var( --header-background-color);
     border-bottom: var(--header-border-bottom);
@@ -31,7 +32,7 @@ header{
 
 
             &:hover {
-                background-color: #f3f3f3;
+                background-color: var(--header-background-active);
                 cursor: pointer;
             }
 
@@ -70,7 +71,7 @@ header{
 
 
             &:hover {
-                background-color: #f3f3f3;
+                background-color: var(--header-background-active);
                 cursor: pointer;
 
 
