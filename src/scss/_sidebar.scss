@@ -7,7 +7,8 @@
     flex-direction: column;
 
     height: 100vh;
-    width: var(--sidebar-panel-width);
+    max-width: var(--sidebar-panel-width);
+    min-width: var(--sidebar-panel-width);
     background-color: #ffffff;
 
     color: var(--header-text-color);
@@ -33,9 +34,7 @@
         svg {
             width: 50px;
             height: 50px;
-
             stroke: var(--main-logo-color);
-            background: url(../resources/admin_control_panel_icon_150307.svg) center no-repeat;
         }
 
         h1 {
@@ -57,7 +56,7 @@
 
             li {
                 &:hover {
-                    background-color: #f3f3f3;
+                    background-color: var(--header-background-active);
                     cursor: pointer;
                 }
 
@@ -78,8 +77,8 @@
 
             li.activated {
                 // border-right: 2px solid var(--main-color);
-                background-color: #f3f3f3;
-                // background-color: #f3f3f3;
+                background-color: var(--header-background-active);
+                // background-color: var(--header-background-active);
             }
         }
     }
