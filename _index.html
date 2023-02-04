@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./reset.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    #masked {
+        width: 50px;
+        height: 50px;
+        /* background: #deb887; */
+    }
+
+    #masked i{
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: blue;
+        -webkit-mask: url(./src/resources/illust58-3612.png);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask: url(./src/resources/illust58-3612.png);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+    }
+</style>
+<body>
+    <div id="masked">
+        <i></i>
+    </div>
+</body>
+</html>

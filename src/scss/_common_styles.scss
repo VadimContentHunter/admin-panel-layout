@@ -1,3 +1,5 @@
+$main_path_to_resources: 'http://admin-panel-layout/src/resources';
+
 :root {
     --main-logo-color: #949494;
     --main-color: #D44137;
@@ -31,6 +33,21 @@
         outline: none;
         text-decoration: none;
         color: $color;
+    }
+}
+
+@mixin img-block-mask($path, $color) {
+    i {
+        display: block;
+        width: inherit;
+        height: inherit;
+        background: $color;
+        -webkit-mask: url($path);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask: url($path);
+        mask-repeat: no-repeat;
+        mask-size: contain;
     }
 }
 

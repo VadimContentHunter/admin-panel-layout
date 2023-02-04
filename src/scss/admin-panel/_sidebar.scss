@@ -31,10 +31,10 @@
         min-height: var(--header-height);
         background-color: var(--header-background-color);
 
-        svg {
+        .icon-panel {
             width: 50px;
             height: 50px;
-            stroke: var(--main-logo-color);
+            @include img-block-mask('#{$main_path_to_resources}/admin_control_panel_icon_150307.svg', var(--main-logo-color));
         }
 
         h1 {
@@ -66,10 +66,10 @@
                 @extend %menu-item-li;
                 margin-right: 8px;
 
-                svg {
+                .icon-module {
                     height: 40px;
                     width: 40px;
-                    fill: var(--icon-color);
+                    @include img-block-mask('#{$main_path_to_resources}/extension_FILL0_40.svg', var(--icon-color));
                 }
 
                 @include reset-a-effects(var(--header-text-color));

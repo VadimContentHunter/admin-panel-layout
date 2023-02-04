@@ -183,10 +183,21 @@ header section.control-panel .logo i {
   min-height: var(--header-height);
   background-color: var(--header-background-color);
 }
-.main-block section.sidebar .logo svg {
+.main-block section.sidebar .logo .icon-panel {
   width: 50px;
   height: 50px;
-  stroke: var(--main-logo-color);
+}
+.main-block section.sidebar .logo .icon-panel i {
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: var(--main-logo-color);
+  -webkit-mask: url("http://admin-panel-layout/src/resources/admin_control_panel_icon_150307.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask: url("http://admin-panel-layout/src/resources/admin_control_panel_icon_150307.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 .main-block section.sidebar .logo h1 {
   font-size: 14pt;
@@ -213,10 +224,21 @@ header section.control-panel .logo i {
   background-color: var(--header-background-active);
   cursor: pointer;
 }
-.main-block section.sidebar section > menu li svg {
+.main-block section.sidebar section > menu li .icon-module {
   height: 40px;
   width: 40px;
-  fill: var(--icon-color);
+}
+.main-block section.sidebar section > menu li .icon-module i {
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: var(--icon-color);
+  -webkit-mask: url("http://admin-panel-layout/src/resources/extension_FILL0_40.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask: url("http://admin-panel-layout/src/resources/extension_FILL0_40.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 .main-block section.sidebar section > menu li a:active,
 .main-block section.sidebar section > menu li a:hover,
