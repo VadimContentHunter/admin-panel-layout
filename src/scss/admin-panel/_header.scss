@@ -36,10 +36,10 @@ header{
                 cursor: pointer;
             }
 
-            svg {
-                width: 24px;
+            .icon-header-notification {
                 height: 24px;
-                fill: var(--icon-color);
+                width: 24px;
+                @include img-block-mask('#{$main_path_to_resources}/notifications_24.svg', var(--icon-color));
             }
 
             &::after {
@@ -64,6 +64,7 @@ header{
         .account-block {
             display: flex;
             flex-direction: column;
+            justify-content: center;
 
             height: inherit;
             border-radius: var(--main-border-radius);
@@ -78,6 +79,10 @@ header{
                 .sub-menu {
                     display: block;
                     margin: 4px 0px;
+                    position: fixed;
+                    top: 56px;
+                    width: 168px;
+                    margin-left: -8px;
                 }
             }
 
@@ -88,23 +93,13 @@ header{
             .account-block-main {
                 @extend %flex-row-center;
 
-
-                .account-logo {
-                    @extend %flex-row-center;
-                    justify-content: center;
-
+                img {
                     width: 40px;
                     height: 40px;
-                    border: 2px solid var(--icon-color);
                     border-radius: var(--main-border-radius);
-                    margin-right: 8px;
-
-
-                    svg {
-                        width: 24px;
-                        height: 24px;
-                        fill: var(--icon-color);
-                    }
+                    margin-right: 12px;
+                    background-size: contain;
+                    @include box-shadow(0px 0px 10px -0px rgba(34, 60, 80, 0.2));
                 }
 
                 .account-name {
@@ -119,11 +114,11 @@ header{
                         text-overflow: ellipsis;
                     }
 
-                    svg {
+                    .icon-triangle {
                         width: 20px;
                         height: 20px;
                         transform: rotate(180deg);
-                        fill: var(--icon-color);
+                        @include img-block-mask('#{$main_path_to_resources}/change_history_20.svg', var(--icon-color));
                     }
                 }
             }
