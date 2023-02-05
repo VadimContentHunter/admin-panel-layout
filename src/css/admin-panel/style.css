@@ -373,17 +373,25 @@ section.sidebar-menu .sub-menu {
   border: 2px solid var(--icon-color);
   border-radius: var(--main-border-radius);
   justify-content: center;
-  fill: var(--icon-color);
 }
-.content-wrapper .items-container .container-one .panel-header a.icon-panel svg {
-  height: 24px;
-  width: 24px;
-  fill: inherit;
+.content-wrapper .items-container .container-one .panel-header a.icon-panel i {
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: var(--icon-color);
+  -webkit-mask: url("http://admin-panel-layout/src/resources/edit_FILL1_24.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask: url("http://admin-panel-layout/src/resources/edit_FILL1_24.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 .content-wrapper .items-container .container-one .panel-header a.icon-panel:hover {
-  fill: var(--main-color);
   border-color: var(--main-color);
   cursor: pointer;
+}
+.content-wrapper .items-container .container-one .panel-header a.icon-panel:hover i {
+  background-color: var(--main-color);
 }
 .content-wrapper .items-container .container-one form {
   display: flex;

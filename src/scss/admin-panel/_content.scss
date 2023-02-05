@@ -50,18 +50,15 @@
                     border: 2px solid var(--icon-color);
                     border-radius: var(--main-border-radius);
                     justify-content: center;
-                    fill: var(--icon-color);
-
-                    svg {
-                        height: 24px;
-                        width: 24px;
-                        fill: inherit;
-                    }
+                    @include img-block-mask('#{$main_path_to_resources}/edit_FILL1_24.svg', var(--icon-color));
 
                     &:hover {
-                        fill: var(--main-color);
                         border-color: var(--main-color);
                         cursor: pointer;
+
+                        i {
+                            background-color: var(--main-color);
+                        }
                     }
                 }
             }
