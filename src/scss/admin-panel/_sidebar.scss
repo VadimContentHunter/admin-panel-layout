@@ -69,13 +69,13 @@
                 .icon-module {
                     height: 40px;
                     width: 40px;
-                    @include img-block-mask('#{$main_path_to_resources}/extension_FILL0_40.svg', var(--icon-color));
+                    @include img-block-mask('#{$main_path_to_resources}/extension_FILL0_40.svg', var(--main-icon-color));
                 }
 
                 .icon-module-off {
                     height: 40px;
                     width: 40px;
-                    @include img-block-mask('#{$main_path_to_resources}/extension_off_FILL0_wght300_GRAD0_opsz40.svg', var(--icon-color));
+                    @include img-block-mask('#{$main_path_to_resources}/extension_off_FILL0_wght300_GRAD0_opsz40.svg', var(--main-icon-color));
                 }
 
                 @include reset-a-effects(var(--header-text-color));

@@ -6,7 +6,8 @@ $main_path_to_resources: 'http://admin-panel-layout/src/resources';
     --main-border-radius: 8px;
     --main-color-text: #444444;
     --main-content-color: #F9F9FD;
-    --icon-color: #949494;
+    --main-soft-text: #949494;
+    --main-icon-color: #949494;
     --header-height: 68px;
     --header-border-bottom: 2px solid #f1f1f1;
     --header-background-color: #ffffff;
@@ -24,7 +25,7 @@ $main_path_to_resources: 'http://admin-panel-layout/src/resources';
     box-shadow: $property;
 }
 
-@mixin reset-a-effects($color) {
+@mixin reset-a-effects($color: inherit) {
     a:active,
     a:hover,
     a:visited,

@@ -1,4 +1,5 @@
-header section.control-panel, header section.account-control .account-block .account-block-main .account-name, header section.account-control .account-block .account-block-main, header section.account-control .notifications, header section.account-control, header {
+@charset "UTF-8";
+header section.control-panel, header section.account-control .account-block .account-block-main .account-name, header section.account-control .account-block .account-block-main, header section.account-control, header .notification-block .notifications, header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,7 +17,8 @@ header section.control-panel, header section.account-control .account-block .acc
   --main-border-radius: 8px;
   --main-color-text: #444444;
   --main-content-color: #F9F9FD;
-  --icon-color: #949494;
+  --main-soft-text: #949494;
+  --main-icon-color: #949494;
   --header-height: 68px;
   --header-border-bottom: 2px solid #f1f1f1;
   --header-background-color: #ffffff;
@@ -58,30 +60,77 @@ header {
   border-bottom: var(--header-border-bottom);
   color: var(--header-text-color);
   font-size: var(--sidebar-font-size);
+  /**
+  * Стиль для всплывающих уведомлений
+  */
+  /**
+  * Стиль для индикатора новых уведомлений
+  */
+  /**
+   * Блок уведомлений
+   */
+  /**
+   * Блок управления аккаунтом
+   */
 }
-header section.account-control {
-  margin: 0px 40px;
-  height: 50px;
+header .__push .notifications {
+  background-color: var(--header-background-active) !important;
 }
-header section.account-control .notifications {
+header .__push .notifications::after {
+  background-color: var(--main-color) !important;
+}
+header .__push .sub-menu {
+  display: block !important;
+}
+header .__push .sub-menu article.__push {
+  display: flex !important;
+}
+header .__push .sub-menu article {
+  display: none !important;
+  color: var(--main-soft-text);
+}
+header .__new .notifications::after {
+  background-color: var(--main-color) !important;
+}
+header .notification-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: inherit;
+  border-radius: var(--main-border-radius);
+  padding: var(--header-element-padding);
+  /**
+   * main container, icon
+   */
+  /**
+   * Sub-menu
+   */
+}
+header .notification-block:hover .notifications {
+  background-color: var(--header-background-active);
+  cursor: pointer;
+}
+header .notification-block:hover .sub-menu {
+  display: block;
+}
+header .notification-block:hover .sub-menu article {
+  color: var(--main-color-text);
+}
+header .notification-block .notifications {
   justify-content: center;
   height: inherit;
   border-radius: var(--main-border-radius);
   padding: var(--header-element-padding);
 }
-header section.account-control .notifications:hover {
-  background-color: var(--header-background-active);
-  cursor: pointer;
-}
-header section.account-control .notifications .icon-header-notification {
+header .notification-block .notifications .icon-header-notification {
   height: 24px;
   width: 24px;
 }
-header section.account-control .notifications .icon-header-notification i {
+header .notification-block .notifications .icon-header-notification i {
   display: block;
   width: inherit;
   height: inherit;
-  background: var(--icon-color);
+  background: var(--main-icon-color);
   -webkit-mask: url("http://admin-panel-layout/src/resources/notifications_24.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -89,7 +138,7 @@ header section.account-control .notifications .icon-header-notification i {
   mask-repeat: no-repeat;
   mask-size: contain;
 }
-header section.account-control .notifications::after {
+header .notification-block .notifications::after {
   position: relative;
   top: -10px;
   right: 4px;
@@ -102,7 +151,117 @@ header section.account-control .notifications::after {
   color: white;
   font-size: 10pt;
   font-weight: bold;
-  background-color: var(--main-color);
+  background-color: var(--main-icon-color);
+}
+header .notification-block .sub-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  width: 300px;
+  max-height: 420px;
+  margin: 4px 0px;
+  margin-left: -40px;
+  overflow-y: auto;
+}
+header .notification-block .sub-menu article {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px;
+  margin: 4px 12px;
+  border-bottom: solid 1px #d8d8d8;
+  border-radius: var(--main-border-radius);
+  color: var(--main-soft-text);
+}
+header .notification-block .sub-menu article h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+header .notification-block .sub-menu article h4 p time {
+  font-size: 10px;
+  margin-left: 8px;
+  color: inherit;
+}
+header .notification-block .sub-menu article h4 p time::before {
+  content: "[ ";
+}
+header .notification-block .sub-menu article h4 p time::after {
+  content: " ]";
+}
+header .notification-block .sub-menu article h4 menu {
+  display: flex;
+  height: 28px;
+}
+header .notification-block .sub-menu article h4 menu button {
+  display: none;
+  border: none;
+  border-radius: var(--main-border-radius);
+  background-color: transparent;
+  padding: 4px 8px;
+}
+header .notification-block .sub-menu article h4 menu button:hover {
+  cursor: pointer;
+  background-color: var(--header-background-active);
+}
+header .notification-block .sub-menu article h4 menu button.check .icon-check {
+  width: 20px;
+  height: 20px;
+}
+header .notification-block .sub-menu article h4 menu button.check .icon-check i {
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: var(--main-icon-color);
+  -webkit-mask: url("http://admin-panel-layout/src/resources/check_FILL0_wght300_GRAD0_opsz24.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask: url("http://admin-panel-layout/src/resources/check_FILL0_wght300_GRAD0_opsz24.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+header .notification-block .sub-menu article a:active,
+header .notification-block .sub-menu article a:hover,
+header .notification-block .sub-menu article a:visited,
+header .notification-block .sub-menu article a:hover,
+header .notification-block .sub-menu article a {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+header .notification-block .sub-menu article a {
+  overflow: hidden;
+  max-height: 40px;
+}
+header .notification-block .sub-menu article a:hover {
+  cursor: pointer;
+  background-color: var(--header-background-active);
+}
+header .notification-block .sub-menu article.__push {
+  display: flex !important;
+  position: sticky;
+  top: 0px;
+  background-color: var(--header-background-active);
+  color: var(--main-color-text);
+}
+header .notification-block .sub-menu article.__push menu button.check:hover .icon-check i {
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: var(--main-color);
+  -webkit-mask: url("http://admin-panel-layout/src/resources/check_FILL0_wght300_GRAD0_opsz24.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask: url("http://admin-panel-layout/src/resources/check_FILL0_wght300_GRAD0_opsz24.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+header .notification-block .sub-menu article.__push button.check {
+  display: block;
+}
+header section.account-control {
+  margin: 0px 40px;
+  height: 50px;
 }
 header section.account-control .account-block {
   display: flex;
@@ -155,7 +314,7 @@ header section.account-control .account-block .account-block-main .account-name 
   display: block;
   width: inherit;
   height: inherit;
-  background: var(--icon-color);
+  background: var(--main-icon-color);
   -webkit-mask: url("http://admin-panel-layout/src/resources/change_history_20.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -256,7 +415,7 @@ header section.control-panel .logo i {
   display: block;
   width: inherit;
   height: inherit;
-  background: var(--icon-color);
+  background: var(--main-icon-color);
   -webkit-mask: url("http://admin-panel-layout/src/resources/extension_FILL0_40.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -272,7 +431,7 @@ header section.control-panel .logo i {
   display: block;
   width: inherit;
   height: inherit;
-  background: var(--icon-color);
+  background: var(--main-icon-color);
   -webkit-mask: url("http://admin-panel-layout/src/resources/extension_off_FILL0_wght300_GRAD0_opsz40.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -303,7 +462,7 @@ header section.control-panel .logo i {
 section.sidebar-menu {
   position: fixed;
   z-index: 150;
-  left: calc( var(--sidebar-panel-width) + 10px );
+  left: calc( var(--sidebar-panel-width) + -8px );
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -311,7 +470,22 @@ section.sidebar-menu {
   font-size: var(--sidebar-font-size);
 }
 section.sidebar-menu .sub-menu {
-  min-width: 120px;
+  width: 120px;
+}
+
+section.header-menu {
+  position: fixed;
+  z-index: 150;
+  left: calc( var(--sidebar-panel-width) + -8px );
+  top: calc( var(--header-height) + -8px );
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  color: var(--header-text-color);
+  font-size: var(--sidebar-font-size);
+}
+section.header-menu .sub-menu {
+  width: 120px;
 }
 
 .content-wrapper {
@@ -370,7 +544,7 @@ section.sidebar-menu .sub-menu {
   align-items: center;
   height: 32px;
   width: 32px;
-  border: 2px solid var(--icon-color);
+  border: 2px solid var(--main-icon-color);
   border-radius: var(--main-border-radius);
   justify-content: center;
 }
@@ -378,7 +552,7 @@ section.sidebar-menu .sub-menu {
   display: block;
   width: inherit;
   height: inherit;
-  background: var(--icon-color);
+  background: var(--main-icon-color);
   -webkit-mask: url("http://admin-panel-layout/src/resources/edit_FILL1_24.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -407,7 +581,7 @@ section.sidebar-menu .sub-menu {
   flex-direction: column;
 }
 .content-wrapper .items-container .container-one form ul li label {
-  color: var(--icon-color);
+  color: var(--main-soft-text);
   font-size: 13px;
   margin-top: 12px;
   margin-bottom: 8px;

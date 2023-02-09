@@ -16,12 +16,73 @@ header{
     color: var(--header-text-color);
     font-size: var(--sidebar-font-size);
 
-    section.account-control {
-        @extend %flex-row-center;
-        margin: 0px 40px;
-        height: 50px;
+    /**
+    * Стиль для всплывающих уведомлений
+    */
+    .__push {
+        .notifications {
+            background-color: var(--header-background-active) !important;
 
+            &::after {
+                background-color: var(--main-color) !important;
+            }
+        }
 
+        .sub-menu {
+            display: block !important;
+
+            article.__push {
+                display: flex !important;
+            }
+
+            article {
+                display: none !important;
+                color: var(--main-soft-text);
+            }
+        }
+    }
+
+    /**
+    * Стиль для индикатора новых уведомлений
+    */
+    .__new {
+        .notifications {
+            &::after {
+                background-color: var(--main-color) !important;
+            }
+        }
+    }
+
+    /**
+     * Блок уведомлений
+     */
+    .notification-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: inherit;
+        border-radius: var(--main-border-radius);
+        padding: var(--header-element-padding);
+
+        &:hover {
+
+            .notifications {
+                background-color: var(--header-background-active);
+                cursor: pointer;
+            }
+
+            .sub-menu {
+                display: block;
+
+                article {
+                    color: var(--main-color-text);
+                }
+            }
+        }
+
+        /**
+         * main container, icon
+         */
         .notifications {
             @extend %flex-row-center;
             justify-content: center;
@@ -31,15 +92,10 @@ header{
             padding: var(--header-element-padding);
 
 
-            &:hover {
-                background-color: var(--header-background-active);
-                cursor: pointer;
-            }
-
             .icon-header-notification {
                 height: 24px;
                 width: 24px;
-                @include img-block-mask('#{$main_path_to_resources}/notifications_24.svg', var(--icon-color));
+                @include img-block-mask('#{$main_path_to_resources}/notifications_24.svg', var(--main-icon-color));
             }
 
             &::after {
@@ -57,9 +113,121 @@ header{
                 color: white;
                 font-size: 10pt;
                 font-weight: bold;
-                background-color: var(--main-color);
+                background-color: var(--main-icon-color);
             }
         }
+
+        /**
+         * Sub-menu
+         */
+        .sub-menu {
+            display: none;
+            position: fixed;
+            top: 56px;
+            width: 300px;
+            max-height: 420px;
+            margin: 4px 0px;
+            margin-left: -40px;
+            overflow-y: auto;
+
+            article {
+                display: flex;
+                flex-direction: column;
+                padding: 12px 12px;
+                margin: 4px 12px;
+                border-bottom: solid 1px #d8d8d8;
+                border-radius: var(--main-border-radius);
+                color: var(--main-soft-text);
+
+                h4 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 4px;
+
+                    p {
+                        time {
+                            font-size: 10px;
+                            margin-left: 8px;
+                            color: inherit;
+
+                            &::before {
+                                content: '[ ';
+                            }
+
+                            &::after {
+                                content: ' ]';
+                            }
+                        }
+                    }
+
+                    menu {
+                        display: flex;
+                        height: 28px;
+
+                        button {
+                            display: none;
+                            border: none;
+                            border-radius: var(--main-border-radius);
+                            background-color: transparent;
+                            padding: 4px 8px;
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: var(--header-background-active);
+                            }
+                        }
+
+                        button.check {
+                            .icon-check {
+                                width: 20px;
+                                height: 20px;
+                                @include img-block-mask('#{$main_path_to_resources}/check_FILL0_wght300_GRAD0_opsz24.svg', var(--main-icon-color));
+                            }
+                        }
+                    }
+                }
+
+                @include reset-a-effects();
+                a {
+                    overflow: hidden;
+                    max-height: 40px;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: var(--header-background-active);
+                    }
+                }
+            }
+
+            article.__push {
+                display: flex !important;
+                position: sticky;
+                top: 0px;
+                background-color: var(--header-background-active);
+                color: var(--main-color-text);
+
+                menu button.check:hover {
+                    .icon-check {
+                        @include img-block-mask('#{$main_path_to_resources}/check_FILL0_wght300_GRAD0_opsz24.svg', var(--main-color));
+                    }
+                }
+
+                button.check {
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Блок управления аккаунтом
+     */
+    section.account-control {
+        @extend %flex-row-center;
+        margin: 0px 40px;
+        height: 50px;
 
         .account-block {
             display: flex;
@@ -118,7 +286,7 @@ header{
                         width: 20px;
                         height: 20px;
                         transform: rotate(180deg);
-                        @include img-block-mask('#{$main_path_to_resources}/change_history_20.svg', var(--icon-color));
+                        @include img-block-mask('#{$main_path_to_resources}/change_history_20.svg', var(--main-icon-color));
                     }
                 }
             }

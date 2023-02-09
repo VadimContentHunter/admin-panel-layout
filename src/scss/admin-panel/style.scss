@@ -1,8 +1,9 @@
 
-$sidebar-menu-indent: 10px;
+$sidebar-menu-indent: -8px;
 $sidebar-menu-z-index: 150;
 $sidebar-z-index: 100;
 $header-z-index: 90;
+$header-menu-indent: -8px;
 
 
 %flex-row-center {
@@ -20,7 +21,7 @@ $header-z-index: 90;
 @import '../common_styles';
 @import 'header';
 @import 'sidebar';
-@import 'sidebar_menu';
+@import '_menu';
 @import 'content';
 
 .main-block {

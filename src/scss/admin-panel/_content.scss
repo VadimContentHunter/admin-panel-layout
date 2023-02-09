@@ -47,10 +47,10 @@
                     align-items: center;
                     height: 32px;
                     width: 32px;
-                    border: 2px solid var(--icon-color);
+                    border: 2px solid var(--main-icon-color);
                     border-radius: var(--main-border-radius);
                     justify-content: center;
-                    @include img-block-mask('#{$main_path_to_resources}/edit_FILL1_24.svg', var(--icon-color));
+                    @include img-block-mask('#{$main_path_to_resources}/edit_FILL1_24.svg', var(--main-icon-color));
 
                     &:hover {
                         border-color: var(--main-color);
@@ -77,7 +77,7 @@
                         flex-direction: column;
 
                         label {
-                            color: var(--icon-color);
+                            color: var(--main-soft-text);
                             font-size: 13px;
                             margin-top: 12px;
                             margin-bottom: 8px;
