@@ -77,7 +77,7 @@ header .__push .notifications {
   background-color: var(--header-background-active) !important;
 }
 header .__push .notifications::after {
-  background-color: var(--main-color) !important;
+  display: block !important;
 }
 header .__push .sub-menu {
   display: block !important;
@@ -90,7 +90,7 @@ header .__push .sub-menu article {
   color: var(--main-soft-text);
 }
 header .__new .notifications::after {
-  background-color: var(--main-color) !important;
+  display: block !important;
 }
 header .notification-block {
   display: flex;
@@ -139,6 +139,7 @@ header .notification-block .notifications .icon-header-notification i {
   mask-size: contain;
 }
 header .notification-block .notifications::after {
+  display: none;
   position: relative;
   top: -10px;
   right: 4px;
@@ -151,7 +152,7 @@ header .notification-block .notifications::after {
   color: white;
   font-size: 10pt;
   font-weight: bold;
-  background-color: var(--main-icon-color);
+  background-color: var(--main-color);
 }
 header .notification-block .sub-menu {
   display: none;
