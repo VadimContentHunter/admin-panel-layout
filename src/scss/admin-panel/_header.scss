@@ -53,6 +53,13 @@ header{
         }
     }
 
+    section.account-control {
+        @extend %flex-row-center;
+        margin: 0px 40px;
+        height: 50px;
+
+    }
+
     /**
      * Блок уведомлений
      */
@@ -221,77 +228,77 @@ header{
         }
     }
 
-
     /**
      * Блок управления аккаунтом
      */
-    section.account-control {
-        @extend %flex-row-center;
-        margin: 0px 40px;
-        height: 50px;
+    .account-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-        .account-block {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            height: inherit;
-            border-radius: var(--main-border-radius);
-            padding: var(--header-element-padding);
+        height: inherit;
+        border-radius: var(--main-border-radius);
+        padding: var(--header-element-padding);
 
 
-            &:hover {
-                background-color: var(--header-background-active);
-                cursor: pointer;
+        &:hover {
+            background-color: var(--header-background-active);
+            cursor: pointer;
 
 
-                .sub-menu {
-                    display: block;
-                    margin: 4px 0px;
-                    position: fixed;
-                    top: 56px;
-                    width: 168px;
-                    margin-left: -8px;
+            .sub-menu {
+                display: block;
+            }
+        }
+
+        .sub-menu {
+            display: none;
+            margin: 4px 0px;
+            position: fixed;
+            top: 56px;
+            width: 168px;
+            margin-left: -8px;
+
+            menu {
+                max-height: 200px;
+
+                li {
+                    padding: 10px 8px;
                 }
             }
+        }
 
-            .account-block-menu {
-                display: none;
+        .account-block-main {
+            @extend %flex-row-center;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: var(--main-border-radius);
+                margin-right: 12px;
+                background-size: contain;
+                @include box-shadow(0px 0px 10px -0px rgba(34, 60, 80, 0.2));
             }
 
-            .account-block-main {
+            .account-name {
                 @extend %flex-row-center;
+                justify-content: center;
 
-                img {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: var(--main-border-radius);
-                    margin-right: 12px;
-                    background-size: contain;
-                    @include box-shadow(0px 0px 10px -0px rgba(34, 60, 80, 0.2));
+
+                span {
+                    width: 84px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
-                .account-name {
-                    @extend %flex-row-center;
-                    justify-content: center;
-
-
-                    span {
-                        width: 84px;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-
-                    .icon-triangle {
-                        width: 20px;
-                        height: 20px;
-                        transform: rotate(180deg);
-                        @include img-block-mask('#{$main_path_to_resources}/change_history_20.svg', var(--main-icon-color));
-                    }
+                .icon-triangle {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(180deg);
+                    @include img-block-mask('#{$main_path_to_resources}/change_history_20.svg', var(--main-icon-color));
                 }
             }
-
         }
 
     }

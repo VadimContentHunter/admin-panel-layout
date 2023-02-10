@@ -1,5 +1,5 @@
 @charset "UTF-8";
-header section.control-panel, header section.account-control .account-block .account-block-main .account-name, header section.account-control .account-block .account-block-main, header section.account-control, header .notification-block .notifications, header {
+header section.control-panel, header .account-block .account-block-main .account-name, header .account-block .account-block-main, header .notification-block .notifications, header section.account-control, header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -91,6 +91,10 @@ header .__push .sub-menu article {
 }
 header .__new .notifications::after {
   display: block !important;
+}
+header section.account-control {
+  margin: 0px 40px;
+  height: 50px;
 }
 header .notification-block {
   display: flex;
@@ -260,11 +264,7 @@ header .notification-block .sub-menu article.__push menu button.check:hover .ico
 header .notification-block .sub-menu article.__push button.check {
   display: block;
 }
-header section.account-control {
-  margin: 0px 40px;
-  height: 50px;
-}
-header section.account-control .account-block {
+header .account-block {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -272,22 +272,28 @@ header section.account-control .account-block {
   border-radius: var(--main-border-radius);
   padding: var(--header-element-padding);
 }
-header section.account-control .account-block:hover {
+header .account-block:hover {
   background-color: var(--header-background-active);
   cursor: pointer;
 }
-header section.account-control .account-block:hover .sub-menu {
+header .account-block:hover .sub-menu {
   display: block;
+}
+header .account-block .sub-menu {
+  display: none;
   margin: 4px 0px;
   position: fixed;
   top: 56px;
   width: 168px;
   margin-left: -8px;
 }
-header section.account-control .account-block .account-block-menu {
-  display: none;
+header .account-block .sub-menu menu {
+  max-height: 200px;
 }
-header section.account-control .account-block .account-block-main img {
+header .account-block .sub-menu menu li {
+  padding: 10px 8px;
+}
+header .account-block .account-block-main img {
   width: 40px;
   height: 40px;
   border-radius: var(--main-border-radius);
@@ -297,21 +303,21 @@ header section.account-control .account-block .account-block-main img {
   -moz-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2);
 }
-header section.account-control .account-block .account-block-main .account-name {
+header .account-block .account-block-main .account-name {
   justify-content: center;
 }
-header section.account-control .account-block .account-block-main .account-name span {
+header .account-block .account-block-main .account-name span {
   width: 84px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-header section.account-control .account-block .account-block-main .account-name .icon-triangle {
+header .account-block .account-block-main .account-name .icon-triangle {
   width: 20px;
   height: 20px;
   transform: rotate(180deg);
 }
-header section.account-control .account-block .account-block-main .account-name .icon-triangle i {
+header .account-block .account-block-main .account-name .icon-triangle i {
   display: block;
   width: inherit;
   height: inherit;
